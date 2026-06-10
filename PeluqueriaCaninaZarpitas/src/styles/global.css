@@ -11,8 +11,13 @@
   --color-stone-500: #a1a1aa; /* zinc-400 */
   --color-stone-600: #d4d4d8; /* zinc-300 */
   --color-stone-700: #e4e4e7; /* zinc-200 */
-  --color-stone-800: #f4f4f5; /* zinc-100 */
+  --color-stone-800: #ffffff; /* zinc-100 to white */
   --color-stone-900: #ffffff; /* white */
+  
+  --color-zinc-100: #ffffff;
+  --color-zinc-200: #fafafa;
+  --color-zinc-300: #f4f4f5;
+  --color-zinc-400: #e4e4e7;
 
   /* ── Colores de marca (Grises oscuros en lugar de verde/morado) ────────────────────────── */
   --color-brand-purple-50:  #27272a;
