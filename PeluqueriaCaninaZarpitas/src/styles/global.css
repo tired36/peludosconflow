@@ -27,78 +27,123 @@
   --font-outfit: 'Outfit', sans-serif;
   --font-playfair: 'Playfair Display', serif;
 
-  --animate-fade-up: fade-up 0.8s ease-out forwards;
-  --animate-fade-in: fade-in 1s ease-out forwards;
-  --animate-bounce-slow: bounce-slow 3s infinite;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-slide-in-left: slide-in-left 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-bounce-slow: bounce-slow 2.5s ease-in-out infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
 }
 
+/* ── Keyframes ── */
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(-5%);
-    animation-timing-function: cubic-bezier(0.8,0,1,1);
-  }
-  50% {
-    transform: none;
-    animation-timing-function: cubic-bezier(0,0,0.2,1);
-  }
+  0%, 100% { transform: translateY(-6px); }
+  50%       { transform: translateY(0); }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-8px) rotate(1deg); }
+  66%       { transform: translateY(-4px) rotate(-1deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 8px rgba(255,255,255,0.6); }
+  50%       { text-shadow: 0 0 18px rgba(255,255,255,1), 0 0 32px rgba(255,255,255,0.5); }
+}
+
+/* ── Base ── */
 @layer base {
-  /* Fondo gris oscuro general y texto blanco */
   body {
-    background-color: #18181b; /* zinc-900 */
+    background-color: #18181b;
     color: #ffffff;
   }
 
-  /* Secciones que usan bg-white o bg-stone-X -> reasignar a gris oscuro */
-  section {
-    background-color: inherit;
-  }
+  section { background-color: inherit; }
 
-  h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
-  }
+  h1, h2, h3, h4, h5, h6 { color: #ffffff; }
 
-  p, span, li, a {
-    color: inherit;
+  p, span, li, a { color: inherit; }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+
+  /* Touch feedback on mobile */
+  @media (hover: none) {
+    a:active, button:active { opacity: 0.75; }
   }
 }
 
+/* ── Utilities ── */
 @layer utilities {
   .scroll-hidden {
     opacity: 0;
     visibility: hidden;
   }
+
   .text-glow {
-    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 12px rgba(255,255,255,0.9), 0 0 24px rgba(255,255,255,0.5);
   }
+
   .text-glow-accent {
-    text-shadow: 0 0 15px rgba(167, 139, 250, 0.8), 0 0 30px rgba(167, 139, 250, 0.4);
+    animation: pulse-glow 2.5s ease-in-out infinite;
   }
-  /* Fondos de sección alternados */
-  .section-dark {
-    background-color: #18181b; /* zinc-900 */
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
   }
-  .section-darker {
-    background-color: #09090b; /* zinc-950 */
+
+  .animate-scale-in {
+    animation: scale-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
-  .section-medium {
-    background-color: #27272a; /* zinc-800 */
+
+  /* Shimmer text effect */
+  .text-shimmer {
+    background: linear-gradient(90deg, #fff 25%, #a78bfa 50%, #fff 75%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
   }
+
+  /* Card hover lift */
+  .card-hover {
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.25s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+  }
+
+  /* Fondos de sección */
+  .section-dark   { background-color: #18181b; }
+  .section-darker { background-color: #09090b; }
+  .section-medium { background-color: #27272a; }
 }

@@ -1,4 +1,4 @@
-﻿---
+---
 const services = [
 	{
 		title: "Baño Completo",
@@ -45,7 +45,7 @@ const services = [
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
 			{services.map((service, index) => (
-				<div class="bg-zinc-950 rounded-2xl p-6 sm:p-8 border border-zinc-800 hover:border-brand-purple-200 hover:shadow-xl transition-all duration-300 group reveal" style={`transition-delay: ${index * 80}ms;`}>
+				<div class="bg-zinc-950 rounded-2xl p-6 sm:p-8 border border-zinc-800 hover:border-brand-purple-400 transition-all duration-300 group reveal card-hover" style={`transition-delay: ${index * 80}ms;`}>
 					<div class="w-14 h-14 bg-zinc-900 rounded-xl shadow-sm flex items-center justify-center text-brand-purple-500 mb-5 group-hover:bg-brand-purple-500 group-hover:text-white transition-all duration-300">
 						<Fragment set:html={service.icon} />
 					</div>

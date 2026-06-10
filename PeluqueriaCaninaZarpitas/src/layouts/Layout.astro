@@ -14,8 +14,10 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 		<link rel="icon" type="image/png" href="/iconopeludosconflow.png" />
+		<link rel="apple-touch-icon" href="/iconopeludosconflow.png" />
+		<meta name="theme-color" content="#18181b" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		
