@@ -1,4 +1,4 @@
----
+﻿---
 const services = [
 	{
 		title: "Baño Completo",
@@ -33,26 +33,27 @@ const services = [
 ];
 ---
 
-<section id="servicios" class="py-16 sm:py-24 bg-white">
+<section id="servicios" class="py-16 sm:py-24 bg-zinc-900">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
 			<h2 class="text-brand-green-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-3">Lo que hacemos</h2>
-			<h3 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-stone-900 mb-4 sm:mb-6">Nuestros Servicios</h3>
-			<p class="text-base sm:text-lg text-stone-600">
+			<h3 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-white mb-4 sm:mb-6">Nuestros Servicios</h3>
+			<p class="text-base sm:text-lg text-zinc-300">
 				Ofrecemos un cuidado integral para tu mascota, asegurando que luzca espectacular y se sienta genial.
 			</p>
 		</div>
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
 			{services.map((service, index) => (
-				<div class="bg-stone-50 rounded-2xl p-6 sm:p-8 border border-stone-100 hover:border-brand-purple-200 hover:shadow-xl transition-all duration-300 group reveal" style={`transition-delay: ${index * 80}ms;`}>
-					<div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-brand-purple-500 mb-5 group-hover:bg-brand-purple-500 group-hover:text-white transition-all duration-300">
+				<div class="bg-zinc-950 rounded-2xl p-6 sm:p-8 border border-zinc-800 hover:border-brand-purple-200 hover:shadow-xl transition-all duration-300 group reveal" style={`transition-delay: ${index * 80}ms;`}>
+					<div class="w-14 h-14 bg-zinc-900 rounded-xl shadow-sm flex items-center justify-center text-brand-purple-500 mb-5 group-hover:bg-brand-purple-500 group-hover:text-white transition-all duration-300">
 						<Fragment set:html={service.icon} />
 					</div>
-					<h4 class="text-lg sm:text-xl font-bold text-stone-900 mb-2 sm:mb-3">{service.title}</h4>
-					<p class="text-sm sm:text-base text-stone-600 leading-relaxed">{service.description}</p>
+					<h4 class="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">{service.title}</h4>
+					<p class="text-sm sm:text-base text-zinc-300 leading-relaxed">{service.description}</p>
 				</div>
 			))}
 		</div>
 	</div>
 </section>
+

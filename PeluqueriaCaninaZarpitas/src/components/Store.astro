@@ -1,4 +1,4 @@
----
+﻿---
 import { SITE_DATA } from '../pages/index.astro';
 
 const products = [
@@ -33,13 +33,13 @@ const products = [
 ];
 ---
 
-<section id="tienda" class="py-16 sm:py-24 bg-stone-50 border-t border-stone-200">
+<section id="tienda" class="py-16 sm:py-24 bg-zinc-950 border-t border-zinc-700">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
 		<div class="mb-10 sm:mb-16 reveal">
 			<h2 class="text-brand-green-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-3">Nuestra Tienda</h2>
-			<h3 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-stone-900 mb-4 sm:mb-6">Alimentación y Accesorios</h3>
-			<p class="text-base sm:text-lg text-stone-600 max-w-2xl">
+			<h3 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-white mb-4 sm:mb-6">Alimentación y Accesorios</h3>
+			<p class="text-base sm:text-lg text-zinc-300 max-w-2xl">
 				Todo lo que tu mascota necesita para estar sana y feliz. Te asesoramos sobre el mejor pienso y accesorios adaptados a su raza.
 			</p>
 			<div class="mt-4 sm:mt-6">
@@ -52,7 +52,7 @@ const products = [
 
 		<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 mb-8">
 			{products.map((product, index) => (
-				<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group reveal" style={`transition-delay: ${index * 80}ms;`}>
+				<div class="bg-zinc-900 rounded-2xl overflow-hidden shadow-sm border border-zinc-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group reveal" style={`transition-delay: ${index * 80}ms;`}>
 					<div class="relative h-44 sm:h-48 overflow-hidden">
 						<div class="absolute top-2 left-2 bg-black/50 text-white text-[9px] sm:text-[10px] font-medium px-2 py-0.5 rounded shadow-sm z-20">
 							Foto de muestra
@@ -66,8 +66,8 @@ const products = [
 					</div>
 					<div class="p-4 sm:p-6">
 						<div class="text-[10px] sm:text-xs font-bold text-brand-green-600 uppercase tracking-wider mb-1 sm:mb-2">{product.category}</div>
-						<h4 class="text-base sm:text-xl font-bold text-stone-900 mb-1 sm:mb-2">{product.title}</h4>
-						<p class="text-stone-600 text-xs sm:text-sm mb-4 sm:mb-6 line-clamp-3">{product.description}</p>
+						<h4 class="text-base sm:text-xl font-bold text-white mb-1 sm:mb-2">{product.title}</h4>
+						<p class="text-zinc-300 text-xs sm:text-sm mb-4 sm:mb-6 line-clamp-3">{product.description}</p>
 						<a
 							href={`https://wa.me/${SITE_DATA.phoneClean}?text=Hola, me interesa el producto: ${product.title}`}
 							target="_blank"
@@ -98,3 +98,4 @@ const products = [
 		</div>
 	</div>
 </section>
+
