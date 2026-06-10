@@ -1,46 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Colores de fondo oscuros (Sobrescribir blancos/claros) ────────────────────────── */
-  --color-white: #18181b; /* zinc-900 */
-  --color-stone-50: #09090b; /* zinc-950 */
-  --color-stone-100: #27272a; /* zinc-800 */
-  --color-stone-200: #3f3f46; /* zinc-700 */
-  --color-stone-300: #52525b; /* zinc-600 */
-  --color-stone-400: #a1a1aa; /* zinc-400 */
-  --color-stone-500: #a1a1aa; /* zinc-400 */
-  --color-stone-600: #d4d4d8; /* zinc-300 */
-  --color-stone-700: #e4e4e7; /* zinc-200 */
-  --color-stone-800: #ffffff; /* zinc-100 to white */
-  --color-stone-900: #ffffff; /* white */
-  
-  --color-zinc-100: #ffffff;
-  --color-zinc-200: #fafafa;
-  --color-zinc-300: #f4f4f5;
-  --color-zinc-400: #e4e4e7;
+  /* ── Colores de marca ── */
+  --color-brand-purple-50:  #f5f3ff;
+  --color-brand-purple-100: #ede9fe;
+  --color-brand-purple-200: #ddd6fe;
+  --color-brand-purple-300: #c4b5fd;
+  --color-brand-purple-400: #a78bfa;
+  --color-brand-purple-500: #8b5cf6;
+  --color-brand-purple-600: #7c3aed;
+  --color-brand-purple-700: #6d28d9;
+  --color-brand-purple-800: #5b21b6;
+  --color-brand-purple-900: #4c1d95;
 
-  /* ── Colores de marca (Grises oscuros en lugar de verde/morado) ────────────────────────── */
-  --color-brand-purple-50:  #27272a;
-  --color-brand-purple-100: #3f3f46;
-  --color-brand-purple-200: #52525b;
-  --color-brand-purple-300: #71717a;
-  --color-brand-purple-400: #a1a1aa;
-  --color-brand-purple-500: #d4d4d8;
-  --color-brand-purple-600: #e4e4e7;
-  --color-brand-purple-700: #f4f4f5;
-  --color-brand-purple-800: #fafafa;
-  --color-brand-purple-900: #ffffff;
-
-  --color-brand-green-50:  #27272a;
-  --color-brand-green-100: #3f3f46;
-  --color-brand-green-200: #52525b;
-  --color-brand-green-300: #71717a;
-  --color-brand-green-400: #a1a1aa;
-  --color-brand-green-500: #d4d4d8;
-  --color-brand-green-600: #e4e4e7;
-  --color-brand-green-700: #f4f4f5;
-  --color-brand-green-800: #fafafa;
-  --color-brand-green-900: #ffffff;
+  --color-brand-green-50:  #f0fdf4;
+  --color-brand-green-100: #dcfce7;
+  --color-brand-green-200: #bbf7d0;
+  --color-brand-green-300: #86efac;
+  --color-brand-green-400: #4ade80;
+  --color-brand-green-500: #22c55e;
+  --color-brand-green-600: #16a34a;
+  --color-brand-green-700: #15803d;
+  --color-brand-green-800: #166534;
+  --color-brand-green-900: #14532d;
 
   --font-outfit: 'Outfit', sans-serif;
   --font-playfair: 'Playfair Display', serif;
@@ -77,15 +59,46 @@
   }
 }
 
+@layer base {
+  /* Fondo gris oscuro general y texto blanco */
+  body {
+    background-color: #18181b; /* zinc-900 */
+    color: #ffffff;
+  }
+
+  /* Secciones que usan bg-white o bg-stone-X -> reasignar a gris oscuro */
+  section {
+    background-color: inherit;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+  }
+
+  p, span, li, a {
+    color: inherit;
+  }
+}
+
 @layer utilities {
   .scroll-hidden {
     opacity: 0;
     visibility: hidden;
   }
   .text-glow {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.9), 0 0 24px rgba(255, 255, 255, 0.5);
   }
   .text-glow-accent {
-    text-shadow: 0 0 15px rgba(212, 212, 216, 0.9), 0 0 30px rgba(212, 212, 216, 0.5);
+    text-shadow: 0 0 15px rgba(167, 139, 250, 0.8), 0 0 30px rgba(167, 139, 250, 0.4);
+  }
+  /* Fondos de sección alternados */
+  .section-dark {
+    background-color: #18181b; /* zinc-900 */
+  }
+  .section-darker {
+    background-color: #09090b; /* zinc-950 */
+  }
+  .section-medium {
+    background-color: #27272a; /* zinc-800 */
   }
 }
