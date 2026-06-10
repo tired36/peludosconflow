@@ -1,0 +1,58 @@
+---
+const services = [
+	{
+		title: "Baño Completo",
+		description: "Baño relajante con champús específicos para su tipo de piel y manto. Incluye secado profesional.",
+		icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 14a4 4 0 100-8 4 4 0 000 8zm0 0v3m0 3h.01M20 14H7m13 0a4 4 0 01-4 4H7"></path></svg>`
+	},
+	{
+		title: "Corte de Pelo",
+		description: "Cortes a tijera o máquina adaptados a la raza y preferencias del dueño. Estilos modernos y cómodos.",
+		icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.121 14.121L19 19m-7-7l-7-7m7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243zm8.486-8.486a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243z"></path></svg>`
+	},
+	{
+		title: "Deslanado",
+		description: "Eliminación del pelo muerto para reducir la caída en casa y permitir que la piel respire mejor.",
+		icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>`
+	},
+	{
+		title: "Corte de Uñas",
+		description: "Arreglo y limado de uñas para evitar molestias al caminar y prevenir problemas posturales.",
+		icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`
+	},
+	{
+		title: "Limpieza de Oídos",
+		description: "Limpieza profunda pero delicada para prevenir infecciones y mantener una buena higiene auditiva.",
+		icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>`
+	},
+	{
+		title: "Ozonoterapia",
+		description: "Baños de ozono para pieles sensibles. Reduce el picor, el olor y mantiene el pelo brillante durante semanas.",
+		icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>`
+	}
+];
+---
+
+<section id="servicios" class="py-16 sm:py-24 bg-white">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+			<h2 class="text-brand-green-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-3">Lo que hacemos</h2>
+			<h3 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-stone-900 mb-4 sm:mb-6">Nuestros Servicios</h3>
+			<p class="text-base sm:text-lg text-stone-600">
+				Ofrecemos un cuidado integral para tu mascota, asegurando que luzca espectacular y se sienta genial.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
+			{services.map((service, index) => (
+				<div class="bg-stone-50 rounded-2xl p-6 sm:p-8 border border-stone-100 hover:border-brand-purple-200 hover:shadow-xl transition-all duration-300 group reveal" style={`transition-delay: ${index * 80}ms;`}>
+					<div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-brand-purple-500 mb-5 group-hover:bg-brand-purple-500 group-hover:text-white transition-all duration-300">
+						<Fragment set:html={service.icon} />
+					</div>
+					<h4 class="text-lg sm:text-xl font-bold text-stone-900 mb-2 sm:mb-3">{service.title}</h4>
+					<p class="text-sm sm:text-base text-stone-600 leading-relaxed">{service.description}</p>
+				</div>
+			))}
+		</div>
+	</div>
+</section>

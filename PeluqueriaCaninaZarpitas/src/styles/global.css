@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colores marca Zarpitas ────────────────────────── */
+  /* Morado/violeta del fondo del logo */
+  --color-brand-purple-50:  #f9f0f9;
+  --color-brand-purple-100: #f1d9f1;
+  --color-brand-purple-200: #e0a8e0;
+  --color-brand-purple-300: #c97ac9;
+  --color-brand-purple-400: #b050b0;
+  --color-brand-purple-500: #8B2D8B;   /* ← Color exacto del logo */
+  --color-brand-purple-600: #7a2778;
+  --color-brand-purple-700: #651f63;
+  --color-brand-purple-800: #4e174c;
+  --color-brand-purple-900: #370f36;
+  --color-brand-purple-950: #200820;
+
+  /* Verde lima del logo */
+  --color-brand-green-50:  #f3fbe8;
+  --color-brand-green-100: #dff4c2;
+  --color-brand-green-200: #bde98a;
+  --color-brand-green-300: #99da56;
+  --color-brand-green-400: #7acc36;
+  --color-brand-green-500: #6DC04B;    /* ← Color exacto del logo */
+  --color-brand-green-600: #56a038;
+  --color-brand-green-700: #41802b;
+  --color-brand-green-800: #2e5f1e;
+  --color-brand-green-900: #1b3f11;
+
+  --font-outfit: 'Outfit', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+
+  --animate-fade-up: fade-up 0.8s ease-out forwards;
+  --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-bounce-slow: bounce-slow 3s infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(-5%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+@layer utilities {
+  .scroll-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

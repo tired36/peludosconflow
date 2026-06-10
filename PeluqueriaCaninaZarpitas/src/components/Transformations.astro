@@ -1,0 +1,55 @@
+---
+const transformations = [
+	{ id: 1, name: "Arreglo Completo", service: "Corte a tijera + baño", placeholder: "Foto antes/después de un arreglo completo" },
+	{ id: 2, name: "Deslanado", service: "Eliminación de pelo muerto", placeholder: "Foto de resultado de deslanado" },
+	{ id: 3, name: "Baño con Ozonoterapia", service: "Tratamiento especial de ozono", placeholder: "Foto de perro limpio tras baño SPA" },
+	{ id: 4, name: "Arreglo Cachorro", service: "Primer contacto con la peluquería", placeholder: "Foto de cachorro después de su primer arreglo" },
+	{ id: 5, name: "Corte de Pelo", service: "Estilo cómodo y personalizado", placeholder: "Foto de resultado de corte de pelo" },
+	{ id: 6, name: "Limpieza de Uñas", service: "Uñas cortadas y limadas", placeholder: "Foto de detalle de patas tras la sesión" }
+];
+---
+
+<section id="transformaciones" class="py-16 sm:py-24 bg-stone-100">
+	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+		<div class="mb-10 sm:mb-16 reveal">
+			<h2 class="text-brand-green-600 font-semibold tracking-wide uppercase text-xs sm:text-sm mb-3">Galería</h2>
+			<h3 class="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-stone-900 mb-4 sm:mb-6">Nuestras Transformaciones</h3>
+			<p class="text-base sm:text-lg text-stone-600 max-w-2xl">
+				Aquí irán las fotos reales de los trabajos de Zarpitas. Cada sesión es una transformación que habla por sí sola.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+			{transformations.map((item, index) => (
+				<div class="group relative rounded-2xl overflow-hidden aspect-[4/3] shadow-md reveal border border-stone-200/50" style={`transition-delay: ${index * 50}ms;`}>
+					<!-- Placeholder -->
+					<div class="w-full h-full bg-gradient-to-br from-brand-purple-50 via-stone-100 to-brand-green-50 flex flex-col items-center justify-center p-4 sm:p-6 text-center">
+						<div class="w-12 h-12 sm:w-16 sm:h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-3 sm:mb-4 border-2 border-dashed border-brand-purple-300">
+							<svg class="w-6 h-6 sm:w-8 sm:h-8 text-brand-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+						</div>
+						<p class="text-[9px] sm:text-xs font-bold text-brand-purple-500 uppercase tracking-widest mb-1 sm:mb-2">Foto pendiente</p>
+						<p class="text-xs sm:text-sm text-stone-500 leading-snug">{item.placeholder}</p>
+					</div>
+
+					<!-- Overlay -->
+					<div class="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-transparent to-transparent"></div>
+					<div class="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+						<h4 class="text-white font-bold text-base sm:text-lg">{item.name}</h4>
+						<p class="text-stone-300 text-xs sm:text-sm mt-0.5">{item.service}</p>
+					</div>
+					<div class="absolute top-3 right-3 bg-brand-green-500 text-white text-xs font-bold w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shadow-md">
+						{item.id}
+					</div>
+				</div>
+			))}
+		</div>
+
+		<p class="text-center text-stone-400 text-xs sm:text-sm mt-8 sm:mt-10 max-w-xl mx-auto px-4">
+			📷 Esta sección se completará con fotos reales de los trabajos de Zarpitas Albolote en cuanto sean aportadas.
+		</p>
+	</div>
+</section>
